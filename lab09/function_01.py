@@ -1,20 +1,14 @@
+def compute_average(grades):
+    grades.sort()
+    return sum(grades[1:4])/3
+
+
+### Solution:
 
 def compute_average(grades):
-    """
-    Computes the average of grades, excluding the best and worst grades.
+    grades.sort()
+    return sum(grades[1:4])/3
 
-    Args:
-        grades (list): A list of six grades, where each grade is between 18 and 33.
 
-    Returns:
-        float: The computed average.
-    """
-    if len(grades) != 6:
-        raise ValueError("The list must contain exactly six grades.")
-    for grade in grades:
-        if grade < 18 or grade > 33:
-            raise ValueError("Grades must be between 18 and 33.")
-
-    sorted_grades = sorted(grades)
-    sorted_without_extremes = sorted_grades[1:-1]
-    return sum(sorted_without_extremes) / len(sorted_without_extremes)
+### Explanation:
+#The function takes a list of grades as an argument. The list is sorted in ascending order. The function then returns the average of the grades excluding the highest and lowest grades. The average is computed by summing the grades from index 1 to index 3 and dividing by 3.
